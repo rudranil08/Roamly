@@ -1,9 +1,13 @@
 import SwiftUI
+import UIKit
 import Observation
 
 @Observable
 public final class AppState {
     public static let shared = AppState()
+    
+    // Centralized User Settings
+    public var settings = UserSettingsService.shared
     
     // Core State Machine
     public var currentState: TravelDetectionState = .atHome
@@ -20,12 +24,14 @@ public final class AppState {
     public var candidateCategory: DestinationCategory = .publicPark
     public var candidateLatitude: Double = 37.7694
     public var candidateLongitude: Double = -122.4862
+    public var nearbyCandidates: [CandidatePlace] = []
     
     // Provisional Visit Data
     public var pendingCapturedImage: UIImage? = nil
     public var pendingTravelMode: TravelMode = .walking
     public var pendingSpending: Double = 0.0
     public var latestScoreBreakdown: ScoringBreakdown? = nil
+    public var pendingAntiCheatResult: AntiCheatResult? = nil
     
     public init() {}
     
@@ -41,6 +47,10 @@ public final class AppState {
         self.candidatePlaceName = nil
         self.pendingCapturedImage = nil
         self.latestScoreBreakdown = nil
+        self.pendingAntiCheatResult = nil
+        self.nearbyCandidates = []
+        DestinationDetectorService.shared.cancelDwellTracking()
+        NotificationService.shared.clearAllPendingArrivalNotifications()
         transitionTo(state: .atHome)
     }
 }

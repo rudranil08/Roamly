@@ -269,10 +269,11 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyApp/Info.plist;
+				INFOPLIST_FILE = Roamly/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Roamly uses the camera to take in-the-moment verification photos of your travel destinations to confirm visits and compute scores.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Roamly monitors your departure from your home geofence in the background to automatically record your travel journeys.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Roamly requires your location to set your Home base and detect travel destinations.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Roamly uses motion activity to detect whether you are walking, cycling, or using transit to reward sustainable travel points.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -310,10 +311,11 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyApp/Info.plist;
+				INFOPLIST_FILE = Roamly/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Roamly uses the camera to take in-the-moment verification photos of your travel destinations to confirm visits and compute scores.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Roamly monitors your departure from your home geofence in the background to automatically record your travel journeys.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Roamly requires your location to set your Home base and detect travel destinations.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Roamly uses motion activity to detect whether you are walking, cycling, or using transit to reward sustainable travel points.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

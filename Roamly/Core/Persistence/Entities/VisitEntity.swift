@@ -28,7 +28,7 @@ public final class VisitEntity {
         capturedAt: Date = Date(),
         travelModeRaw: String = TravelMode.walking.rawValue,
         spendingAmount: Double = 0.0,
-        spendingCurrency: String = "USD",
+        spendingCurrency: String = UserSettingsService.shared.currencyCode,
         localPhotoPath: String? = nil,
         photoHash: String = "",
         calculatedScore: Int = 0,

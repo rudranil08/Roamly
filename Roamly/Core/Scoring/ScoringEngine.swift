@@ -36,7 +36,8 @@ public final class ScoringEngine: Sendable {
         }
         
         // 2. Sub-linear distance points capped at 50
-        let rawDistancePoints = 1.5 * sqrt(max(0.0, distanceKm))
+        let safeDistance = (distanceKm.isNaN || distanceKm.isInfinite || distanceKm < 0) ? 0.0 : distanceKm
+        let rawDistancePoints = 1.5 * sqrt(safeDistance)
         let distancePoints = min(maxDistancePoints, rawDistancePoints)
         
         // 3. Category significance
@@ -57,7 +58,7 @@ public final class ScoringEngine: Sendable {
         
         // 6. Final Score Calculation
         let subtotal = (baseDestinationPoints * significance * novelty) + distancePoints
-        let finalScore = Int(round(subtotal * sustainability * fraud))
+        let finalScore = max(0, Int(round(subtotal * sustainability * fraud)))
         
         return ScoringBreakdown(
             basePoints: baseDestinationPoints,
